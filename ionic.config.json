@@ -1,0 +1,7 @@
+{
+  "name": "asis-acad",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
