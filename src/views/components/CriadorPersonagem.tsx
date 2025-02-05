@@ -55,7 +55,12 @@ const CriadorPersonagem = () => {
     "pes": "lightgray",
   });
 
+  const [parteSel, defParteSel] = useState<null | string>(null)
+
   const alterarCor = (parte: string) => {
+    defParteSel(parte)
+    console.log(parte)
+
     defCores((coresAnt) => {
       const novasCores: any = { ...coresAnt };
 
@@ -123,24 +128,25 @@ const CriadorPersonagem = () => {
           </g>
         </svg>
       </div>
-      <div>
-        <IonGrid>
-          {cabeca.map((partes: any, indice) => (
-            <IonRow key={indice} style={{ padding: "0px" }}>
-              <IonCol size="1" className="ion-text-center" style={{ padding: "0px", border: "gray solid 1px" }}>
-                {indice}
-              </IonCol>
-              <IonCol className="ion-text-center" style={{ padding: "0px", border: "lightblue solid 1px" }}>
-                {Object.keys(partes)[0]}
-              </IonCol>
-              <IonCol className="ion-text-center" style={{ padding: "0px", border: "purple solid 1px" }}>
-                {partes[Object.keys(partes)[0]].join(", ")}
-              </IonCol>
-            </IonRow>
-          ))}
-        </IonGrid>
+      <div className="ion-text-center">
+        {parteSel == "cabeca-pescoco" ? (
+          <IonGrid>
+            {cabeca.map((partes: any, indice) => (
+              <IonRow key={indice} style={{ padding: "0px" }}>
+                <IonCol size="1" className="ion-text-center" style={{ padding: "0px", border: "gray solid 1px" }}>
+                  {indice}
+                </IonCol>
+                <IonCol className="ion-text-center" style={{ padding: "0px", border: "lightblue solid 1px" }}>
+                  {Object.keys(partes)[0]}
+                </IonCol>
+                <IonCol className="ion-text-center" style={{ padding: "0px", border: "purple solid 1px" }}>
+                  {partes[Object.keys(partes)[0]].join(", ")}
+                </IonCol>
+              </IonRow>
+            ))}
+          </IonGrid>) : null}
       </div>
-    </div>
+    </div >
   );
 };
 

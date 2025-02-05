@@ -8,9 +8,9 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar className='ion-text-center'>
-          <IonLabel className="titulo" >
+          <IonTitle className="titulo" >
             <IonIcon slot="start" icon={shirt} /> Criador de Personagem
-          </IonLabel>
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
